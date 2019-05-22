@@ -1,12 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import Login from './components/login';
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <Router>
+      <div className="App">
+        <ul>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+          <li>
+            <Link to='/friends'>Friend List</Link>
+          </li>
+        </ul>
+        <Route path='/login' component={Login} />
+      </div>
+    </Router>
   );
 }
 
