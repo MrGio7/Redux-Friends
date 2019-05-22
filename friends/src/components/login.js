@@ -11,11 +11,13 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <form>
+                <form className='login'>
+                User Name:
                     <input
                         type='text'
                         name='username'
                     />
+                Password:
                     <input
                         type='text'
                         name='password'

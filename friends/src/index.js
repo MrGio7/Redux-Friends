@@ -8,6 +8,8 @@ import logger from 'redux-logger';
 import reducer from './reducers';
 import App from './App';
 
+import './index.css';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk, logger)));
 
