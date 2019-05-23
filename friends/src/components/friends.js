@@ -5,6 +5,9 @@ import { withRouter } from 'react-router-dom';
 import { getData } from '../actions';
 
 class Friends extends React.Component {
+    componentDidMount() {
+        this.props.getData();
+    }
 
     render(){
         return(
