@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { login } from '../actions';
 
 class Login extends React.Component {
     state = {
@@ -19,10 +22,13 @@ class Login extends React.Component {
 
     login = e => {
         e.preventDefault();
-        
+        this.props
+        .login(this.state.credentials)
+        .then(() => this.props.history.push('/friends'))
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <form className='login' onSubmit={this.login}>
@@ -49,4 +55,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+export default connect(
+    null,
+    { login }
+)(Login);
