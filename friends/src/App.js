@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Login from './components/login';
+import Friends from './components/friends';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           </li>
         </ul>
         <Route path='/login' component={Login} />
+        <Route exact path='/friends' component={Friends} />
       </div>
     </Router>
   );
