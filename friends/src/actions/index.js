@@ -21,6 +21,9 @@ export const getData = () => dispatch => {
         dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
     })
     .catch (err => {
+        if(err.response.status === 403) {
+            localStorage.removeItem('token')
+        }
         dispatch({ type: FETCH_DATA_FAILURE })
     })
 }
