@@ -18,11 +18,9 @@ export const getData = () => dispatch => {
         headers: { Authorization: localStorage.getItem('token')}
     })
     .then(res => {
-        console.log(res);
-        dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.friends })
+        dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
     })
     .catch (err => {
-        console.log(err);
         dispatch({ type: FETCH_DATA_FAILURE })
     })
 }
